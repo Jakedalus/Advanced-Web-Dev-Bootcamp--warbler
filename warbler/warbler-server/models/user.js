@@ -39,11 +39,13 @@ userSchema.method.comparePassword = async function(candidatePassword, next) {
     let isMatch = await bcrypt.compare(candidatePassword, this.password);
     return isMatch;
   } catch (err) {
-    next(err);
+    return next(err);
   }
 };
 
 const User = mongoose.model('User', userSchema);
+
+console.log('user.js:', User);
 
 module.exports = User;
 
