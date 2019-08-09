@@ -23,7 +23,12 @@ exports.createMessage = async function(req, res, next) {
 };
 
 exports.getMessage = async function(req, res, next) {
+  try {
+    let message = await db.Message.find(req.params.message_id);
+    
+  } catch (err) {
 
+  }
 };
 
 exports.deleteMessage = async function(req, res, next) {
