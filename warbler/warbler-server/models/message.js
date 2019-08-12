@@ -12,6 +12,8 @@ const messageSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   }
+}, {
+  timeStamps: true
 });
 
 messageSchema.pre('remove', async function(next) {
