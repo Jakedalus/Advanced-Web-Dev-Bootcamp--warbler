@@ -29,6 +29,10 @@ export default class AuthForm extends Component {
     this.props.onAuth(authType, this.state)
       .then(() => {
         console.log('LOGGED IN!');
+        this.props.history.push('/');
+      })
+      .catch(() => {
+        return;
       });
   };
 
