@@ -1,5 +1,6 @@
 import { apiCall } from '../../services/api';
 import { SET_CURRENT_USER } from '../actionTypes';
+import { addError, removeError } from './errors';
 
 export function setCurrentUser(user) {
   console.log('setCurrentUser:', user);
@@ -18,9 +19,14 @@ export function authUser(type, userData) {
           console.log('after apiCall:', token, user);
           localStorage.setItem('jwtToken', token);
           dispatch(setCurrentUser(user));
+          dispatch(removeError());
           resolve();
         })
-        .catch(err => console.log('ERROR!!', err));
+        .catch(err => {
+          console.log('ERROR!!', err);
+          dispatch(addError(err.message));
+          reject();
+        });
     })
   }
 }
