@@ -10,6 +10,13 @@ export function setCurrentUser(user) {
   };
 }
 
+export function logout() {
+  return dispatch => {
+    localStorage.clear();
+    dispatch(setCurrentUser({}));
+  };
+}
+
 export function authUser(type, userData) {
   console.log('authUser, /actions/auth.js:', type, userData);
   return dispatch => {
