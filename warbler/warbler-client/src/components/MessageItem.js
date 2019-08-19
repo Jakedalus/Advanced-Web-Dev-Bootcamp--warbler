@@ -6,22 +6,24 @@ import DefaultProfileImage from '../images/default-profile-image.jpg';
 
 const MessageItem = ({date, profileImageUrl, text, username}) => (
   <div>
-    <img 
-      src={profileImageUrl || DefaultProfileImage} 
-      alt={username} 
-      width="100"
-      height="100"
-      className='timeline-image'
-    />
-    <div className="message-area">
-      <Link to='/'>@{username} &nbsp;</Link>
-      <span className="text-muted">
-        <Moment className="text-muted" format="Do MMM YYYY">
-          {date}
-        </Moment>
-      </span>
-      <p>{text}</p>
-    </div>
+    <li className="list-group-item">
+      <img 
+        src={profileImageUrl || DefaultProfileImage} 
+        alt={username} 
+        width="100"
+        height="100"
+        className='timeline-image'
+      />
+      <div className="message-area">
+        <Link to='/'>@{username} &nbsp;</Link>
+        <span className="text-muted">
+          <Moment className="text-muted" format="Do MMM YYYY">
+            {date}
+          </Moment>
+        </span>
+        <p>{text}</p>
+      </div>
+    </li>
   </div>
 );
 
