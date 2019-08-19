@@ -9,6 +9,7 @@ import withAuth from '../hocs/withAuth';
 import MessageForm from '../containers/MessageForm';
 
 const Main = props => {
+  console.log('/containers/Main, props', props);
   const {authUser, errors, removeError, currentUser} = props;
   return (
     <div className="container">

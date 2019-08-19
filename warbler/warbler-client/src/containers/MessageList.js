@@ -22,6 +22,9 @@ class MessageList extends Component {
       />
     ));
 
+    console.log('messages:', messages);
+    console.log('messageList:', messageList);
+
     return (
       <div className="row col-sm-8">
         <div className="offset-1 col-sm-10">

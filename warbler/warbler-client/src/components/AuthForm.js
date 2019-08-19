@@ -9,7 +9,7 @@ export default class AuthForm extends Component {
       email: '',
       username: '',
       password: '',
-      profileImgUrl: ''
+      profileImageUrl: ''
     };
   }
 
@@ -37,7 +37,7 @@ export default class AuthForm extends Component {
   };
 
   render() {
-    const {email, username, password, profileImgUrl} = this.state;
+    const {email, username, password, profileImageUrl} = this.state;
     const {heading, buttonText, signUp, errors, history, removeError} = this.props;
 
     history.listen(() => {
@@ -90,9 +90,9 @@ export default class AuthForm extends Component {
                     type="text" 
                     className='form-control'
                     id='image-url'
-                    name='profileImgUrl'
+                    name='profileImageUrl'
                     onChange={this.handleChange}
-                    value={profileImgUrl}
+                    value={profileImageUrl}
                   />
                 </div>
               )}
